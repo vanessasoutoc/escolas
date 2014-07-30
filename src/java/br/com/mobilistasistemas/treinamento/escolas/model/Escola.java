@@ -6,15 +6,15 @@
 package br.com.mobilistasistemas.treinamento.escolas.model;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -32,17 +32,16 @@ public class Escola implements Serializable {
     private static final long serialVersionUID = 1L;
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Id
-    @Basic( optional = false )
-    @NotNull
-    private Integer id;
+    public Integer id;
 
     private String nome;
 
-    public Escola() {
-    }
+    private String bairro;
 
-    public Escola( Integer id ) {
-        this.id = id;
+    @ManyToMany
+    private Set<Professor> professores;
+
+    public Escola() {
     }
 
     public Integer getId() {
@@ -59,6 +58,22 @@ public class Escola implements Serializable {
 
     public void setNome( String nome ) {
         this.nome = nome;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro( String bairro ) {
+        this.bairro = bairro;
+    }
+
+    public Set<Professor> getProfessores() {
+        return professores;
+    }
+
+    public void setProfessores( Set<Professor> professores ) {
+        this.professores = professores;
     }
 
     @Override
