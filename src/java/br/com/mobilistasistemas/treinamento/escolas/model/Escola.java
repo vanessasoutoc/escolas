@@ -8,6 +8,7 @@ package br.com.mobilistasistemas.treinamento.escolas.model;
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,11 +24,13 @@ import javax.persistence.Table;
 @Entity
 @Table( name = "Escola" )
 @NamedQueries( {
-    @NamedQuery( name = "Escola.findAll" ,
+    @NamedQuery( name = Escola.FIND_ALL ,
                  query = "SELECT e FROM Escola e" ) ,
     @NamedQuery( name = "Escola.findById" ,
                  query = "SELECT e FROM Escola e WHERE e.id = :id" ) } )
 public class Escola implements Serializable {
+
+    public static final String FIND_ALL = "Escola.findAll";
 
     private static final long serialVersionUID = 1L;
     @GeneratedValue( strategy = GenerationType.IDENTITY )
@@ -38,11 +41,8 @@ public class Escola implements Serializable {
 
     private String bairro;
 
-    @ManyToMany
+    @ManyToMany( fetch = FetchType.EAGER )
     private Set<Professor> professores;
-
-    public Escola() {
-    }
 
     public Integer getId() {
         return id;

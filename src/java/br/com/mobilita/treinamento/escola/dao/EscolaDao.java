@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -21,7 +22,14 @@ public class EscolaDao {
     }
 
     public List<Escola> getEscola( Escola escola ) {
-        return entityManager.createNamedQuery( "Escola.findAll" , Escola.class ).getResultList();
+        TypedQuery<Escola> createNamedQuery = entityManager.createNamedQuery(
+                Escola.FIND_ALL , Escola.class );
+        List<Escola> resultList = null;
+        if ( createNamedQuery != null ) {
+            resultList = createNamedQuery.getResultList();
+        }
+
+        return resultList;
 
     }
 
