@@ -1,6 +1,6 @@
-package br.com.mobilita.treinamento.escola.dao;
+package br.com.mobilitasistemas.treinamento.escolas.dao;
 
-import br.com.mobilistasistemas.treinamento.escolas.model.Escola;
+import br.com.mobilitasistemas.treinamento.escolas.model.Escola;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -21,7 +21,7 @@ public class EscolaDao {
         return entityManager.merge( escola );
     }
 
-    public List<Escola> getEscola( Escola escola ) {
+    public List<Escola> getEscola() {
         TypedQuery<Escola> createNamedQuery = entityManager.createNamedQuery(
                 Escola.FIND_ALL , Escola.class );
         List<Escola> resultList = null;

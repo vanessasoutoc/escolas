@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.mobilistasistemas.treinamento.escolas.model;
+package br.com.mobilitasistemas.treinamento.escolas.model;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -50,6 +50,14 @@ public class Professor implements Serializable {
 
     public void setEspecialidade( String especialidade ) {
         this.especialidade = especialidade;
+    }
+
+    public Set<Escola> getEscolas() {
+        return escolas;
+    }
+
+    public void setEscolas( Set<Escola> escolas ) {
+        this.escolas = escolas;
     }
 
     @Override

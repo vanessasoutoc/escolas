@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.mobilistasistemas.treinamento.escolas.model;
+package br.com.mobilitasistemas.treinamento.escolas.model;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -16,6 +16,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -28,6 +30,7 @@ import javax.persistence.Table;
                  query = "SELECT e FROM Escola e" ) ,
     @NamedQuery( name = "Escola.findById" ,
                  query = "SELECT e FROM Escola e WHERE e.id = :id" ) } )
+@XmlRootElement
 public class Escola implements Serializable {
 
     public static final String FIND_ALL = "Escola.findAll";
@@ -68,6 +71,7 @@ public class Escola implements Serializable {
         this.bairro = bairro;
     }
 
+    @XmlTransient
     public Set<Professor> getProfessores() {
         return professores;
     }
