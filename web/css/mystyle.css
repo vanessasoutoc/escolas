@@ -1,0 +1,38 @@
+.mytext{
+	padding-top: 5px;
+	padding-left: 5px;
+	text-align: right;
+	font: verdana;
+	color: white;
+}
+
+
+.scholl-icon-outline{
+
+	float: center;
+	background-color: blue;
+	border: orange 5px solid #cdbfe3;
+}
+
+.scholl-icon-lg{
+
+	width: 640px;
+	height: 144px;
+	font-size: 108px;
+	line-height: 140px;
+}
+
+.scholl-icon{
+
+	border-radius: 3%;
+	cursor: default;
+	background-color: black;
+	text-align: center;
+	color: white;
+	font-weight: 500;
+	display: block;
+}
+
+.hcenter{
+	text-align: center;
+}
