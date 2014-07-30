@@ -32,7 +32,7 @@ public class Escola implements Serializable {
     private static final long serialVersionUID = 1L;
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Id
-    public Integer id;
+    private Integer id;
 
     private String nome;
 
