@@ -50,3 +50,6 @@ body{
 .page-header{
     margin-top: 5px;
 }
+.clicked{
+    background-color: red;
+}

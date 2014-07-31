@@ -7,8 +7,10 @@ package br.com.mobilitasistemas.treinamento.escolas.services;
 
 import br.com.mobilitasistemas.treinamento.escolas.dao.EscolaDao;
 import br.com.mobilitasistemas.treinamento.escolas.model.Escola;
+import br.com.mobilitasistemas.treinamento.escolas.model.Professor;
 import com.google.gson.Gson;
 import java.util.List;
+import java.util.Set;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -36,15 +38,26 @@ public class EscolaREST {
     public String busca() {
 
         List<Escola> escolas = dao.getEscola();
+        filtraEscolas( escolas );
         String toJson = new Gson().toJson( escolas );
         return toJson;
 
     }
 
+    private void filtraEscolas( List<Escola> escolas ) {
+        for ( Escola escola : escolas ) {
+            Set<Professor> professores = escola.getProfessores();
+            for ( Professor professor : professores ) {
+                professor.setEscolas( null );
+            }
+        }
+    }
+
     @Path( "/salvar" )
     @POST
     @Consumes( MediaType.APPLICATION_JSON )
-    public String salvartEscola( String escola ) {
+    public String salvarEscola( String escola ) {
+
         Escola fromJson = new Gson().fromJson( escola , Escola.class );
         Escola salvaEscola = dao.salvaEscola( fromJson );
 

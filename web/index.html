@@ -1,28 +1,36 @@
-<html>
+<html ng-app="app">
+    <head>
+        <title>EscolaApp</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/mystyle.css" rel="stylesheet">
+        <!-- <link href="css/bootstrap-theme.css" rel="stylesheet"> -->
 
+    </head>
+    <body ng-controller="escolaCtrl">
+<nav class="navbar navbar-default" role="navigation">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="col-lg-7">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">SchollApp</a></li>
+                <li><a href="#/cadScholl">Cadastrar Escola</a></li>
+                <li><a href="#/searchScholl">Buscar Escola</a></li>
+            </ul>
+        </div>
+</nav>
+        <div ng-view>
+        </div>
+        <script src="js/jquery.js"></script>
+        <script src="js/angular.js" ></script>
+        <script src="js/angular-route.js" ></script>
+        <script src="js/angular-resource.js" ></script>
+        <script src="src/app.js" ></script>
+        <script src="src/controllers/cadSchollCtrl.js" ></script>
+        <script src="src/controllers/escolaCtrl.js" ></script>
+        <script src="src/controllers/searchSchollCtrl.js" ></script>
+        <script src="src/services/searchService.js" ></script>
+        <script src="src/services/cadSchollService.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
-<head>
-	<title>EscolaApp</title>
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/mystyle.css" rel="stylesheet">
-	<!-- <link href="css/bootstrap-theme.css" rel="stylesheet"> -->
+    </body>
 
-</head>
-<body>
-	<script src="js/bootstrap.min.js"></script>
-	<div class="container">
-		<div class="jumbotron">
-			<div class="hcenter">
-  <h1>Bem-Vindo</h1>
-  <h2>ao</h2>
-  <h1>SchollApp</h1>
-  <p><a class="btn btn-primary btn-lg" role="button" href="cadScholl.html">Cadastrar</a>
-  	<a class="btn btn-primary btn-lg" role="button" href="searchScholl.html">Buscar Escola</a></p>
-</div>
-</div>
-</div>
-
-
-
-	</body>
-	</html>
+</html>
