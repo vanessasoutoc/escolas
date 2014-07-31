@@ -21,7 +21,39 @@ $app.config(function($routeProvider) {
                 redirectTo: '/'
             });
 
+
 });
+
+$app.service('selectManyFunction', function() {
+    this.add = function(obj, listSelect, e) {
+        this.returnValue = {
+            isNotExist: true,
+            list: [],
+            indexRemove: ""
+        };
+        console.log(obj);
+        console.log(listSelect);
+        for (var i = 0; i < listSelect.length; i++) {
+            if (obj === listSelect[i]) {
+                this.returnValue.isNotExist = false;
+                this.returnValue.indexRemove = i;
+            }
+        }
+        if (this.returnValue.isNotExist) {
+            listSelect.push(obj);
+            this.returnValue.list = listSelect;
+            $(e).addClass("active");
+        } else {
+            listSelect.splice(this.returnValue.indexRemove, 1);
+            this.returnValue.list = listSelect;
+            $(e).removeClass("active");
+        }
+
+        return this.returnValue;
+
+    };
+});
+
 
 
 

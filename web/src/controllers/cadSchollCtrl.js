@@ -1,18 +1,22 @@
 
-$app.controller("cadSchollCtrl", function($scope, searchFactory, cadSchollFactory) {
+$app.controller("cadSchollCtrl", function($scope, searchFactory, cadSchollFactory, selectManyFunction) {
     $scope.escola = {
         nome: '', bairro: '', professores: []
     };
     $scope.salvar = function() {
         console.log($scope.escola);
-        cadSchollFactory.saveScholl($scope.escola).then( function(result){
+        cadSchollFactory.saveScholl($scope.escola).then(function(result) {
             console.log(result);
         })
     };
 
-    $scope.selectProfessores = function(professor) {
-        $scope.escola.professores.push(professor);
-        element.clicked();
+    $scope.selectProfessores = function(professor, e) {
+
+        var isexit = false;
+        var element = angular.element(e.target);
+        var returnvalue = selectManyFunction.add(professor, $scope.escola.professores, element);
+        $scope.escola.professores = returnvalue.list;
+        console.log(returnvalue);
     };
 
     searchFactory.getProfessores().then(function(result) {

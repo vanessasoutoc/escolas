@@ -62,9 +62,9 @@
                             </div>
                             <div class="panel-body">
                                 <div class="list-group" >
-                                    <a class="list-group-item element"
+                                    <a class="list-group-item"
                                         ng-repeat="professor in listaProfessores| filter:filtrarProfessor"
-                                        ng-click="selectProfessores(professor)"
+                                        ng-click="selectProfessores(professor, $event)"
                                         >
                                         {{professor.nome}}
                                     </a>
@@ -108,5 +108,6 @@
                 </div>
             </div>
         </div>
-    </body>
+
+   </body>
 </html>
