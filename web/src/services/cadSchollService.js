@@ -6,7 +6,7 @@ $app.factory("cadSchollFactory", ['$http', function($http) {
             saveScholl: function(escola) {
                 return $http
                         ({method: 'POST',
-                            url: urlService + 'escolas/salvar', data: escola}).
+                            url: urlService + '/escolas/salvar', data: escola}).
                         then(function(result) {
                             console.log(result);
                             return result.data;
@@ -19,4 +19,6 @@ $app.factory("cadSchollFactory", ['$http', function($http) {
             }
         }
     }]);
+
+
 

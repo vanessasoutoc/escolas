@@ -7,16 +7,16 @@
 
     </head>
     <body ng-controller="escolaCtrl">
-<nav class="navbar navbar-default" role="navigation">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <div class="col-lg-7">
-            <ul class="nav navbar-nav">
-                <li><a href="index.html">SchollApp</a></li>
-                <li><a href="#/cadScholl">Cadastrar Escola</a></li>
-                <li><a href="#/searchScholl">Buscar Escola</a></li>
-            </ul>
-        </div>
-</nav>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="col-lg-7">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">SchollApp</a></li>
+                        <li><a href="#/cadScholl">Cadastrar Escola</a></li>
+                        <li><a href="#/searchScholl">Buscar Escola</a></li>
+                    </ul>
+                </div>
+        </nav>
         <div ng-view>
         </div>
         <script src="js/jquery.js"></script>
@@ -30,6 +30,12 @@
         <script src="src/services/searchService.js" ></script>
         <script src="src/services/cadSchollService.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script>
+                function escolaSalva()
+                {
+                    alert("Salvo com sucesso!");
+                }
+        </script>
 
     </body>
 
