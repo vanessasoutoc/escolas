@@ -16,7 +16,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
@@ -27,10 +26,8 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table( name = "Escola" )
 @NamedQueries( {
     @NamedQuery( name = Escola.FIND_ALL ,
-                 query = "SELECT e FROM Escola e" ) ,
-    @NamedQuery( name = "Escola.findById" ,
-                 query = "SELECT e FROM Escola e WHERE e.id = :id" ) } )
-@XmlRootElement
+                 query = "SELECT e FROM Escola e" ) } )
+
 public class Escola implements Serializable {
 
     public static final String FIND_ALL = "Escola.findAll";

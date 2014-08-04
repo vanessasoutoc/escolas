@@ -1,5 +1,6 @@
-$app = angular.module("app", ['ngRoute', 'app.service', 'app.cadService'] );
-var urlService = "http://localhost:8080/Escolas/webresources/";
+$app = angular.module("app", ['ngRoute', 'app.service', 'app.cadService']);
+var urlService = "http://localhost:8080/Escolas/webresources";
+
 
 $app.config(function($routeProvider) {
 

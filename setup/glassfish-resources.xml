@@ -6,9 +6,11 @@
         <property name="portNumber" value="3306"/>
         <property name="databaseName" value="escolas"/>
         <property name="User" value="root"/>
-        <property name="Password" value=""/>
+        <property name="Password" value="root"/>
         <property name="URL" value="jdbc:mysql://localhost:3306/escolas?zeroDateTimeBehavior=convertToNull"/>
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="Escolas" object-type="user" pool-name="mysql_escolas_rootPool"/>
 </resources>
+
+
